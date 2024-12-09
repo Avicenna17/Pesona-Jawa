@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap5" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/tiny-slider.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/glightbox.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/flatpickr.min.css') }}">
+
+
+	<title>PesonaJawa</title>
+</head>
+<body>
+
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+
+	<nav class="site-nav">
+		<div class="container">
+			<div class="menu-bg-wrap">
+				<div class="site-navigation">
+					<div class="row g-0 align-items-center">
+						<div class="col-2">
+							<a href="{{ url_for('home') }}" class="logo m-0 float-start">PesonaJawa<span class="text-primary">.</span></a>
+						</div>
+						<div class="col-8 text-center">
+							<form action="#" class="search-form d-inline-block d-lg-none">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="bi-search"></span>
+							</form>
+
+							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
+								<li><a href="{{ url_for('home') }}">Home</a></li>
+								<li class="has-children">
+									<a href="#">Category</a>
+									<ul class="dropdown">
+										<li><a href="{{ url_for('budaya') }}">Budaya</a></li>
+										<li><a href="{{ url_for('tamanhiburan') }}">Taman Hiburan</a></li>
+										<li><a href="{{ url_for('pusper') }}">Pusat Perbelanjaan</a></li>
+										<li><a href="{{ url_for('cagaralam') }}">Cagar Alam</a></li>
+										<li><a href="{{ url_for('bahari') }}">Bahari</a></li>
+										<li><a href="{{ url_for('ibadah') }}">Tempat Ibadah</a></li>
+									</ul>
+								</li>
+								<li class="active"><a href="{{ url_for('trip') }}">Trip</a></li>
+							</ul>
+						</div>
+						<div class="col-2 text-end">
+							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+								<span></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="d-flex justify-content-center mb-5">
+		<div class="comment-form-wrap pt-5" style="max-width: 650px; width: 100%;">
+			<h1 class="mb-5 text-center" style="font-family: 'Work Sans', sans-serif; color: #213555; font-weight: bold;">Temukan Destinasi Wisata<br>Anda Disini!</br></h1>
+			<form id="trip-form" class="p-5 bg-light">
+				<div class="form-group">
+					<label for="category" style="color: #134B70;"><strong>Category <span style="color: red;">*</span></label>
+					<select class="form-control" id="category" name="category" required>
+						<option value="" disabled selected>Select a category</option>
+						{% for category in categories %}
+						<option value="{{ category }}">{{ category }}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="city" style="color: #134B70;"><strong>City <span style="color: red;">*</span></label>
+					<select class="form-control" id="city" name="city" required>
+						<option value="" disabled selected>Select a city</option>
+						{% for city in cities %}
+						<option value="{{ city }}">{{ city }}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="price" style="color: #134B70;"><strong>Price <span style="color: red;">*</span></label>
+					<select class="form-control" id="price" name="price" required>
+						<option value="" disabled selected>Select a price</option>
+						<option value="Low">Low</option>
+						<option value="Medium">Medium</option>
+						<option value="High">High</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="rating" style="color: #134B70;"><strong>Rating</strong> <span style="color: red;">*</span></label>
+					<select class="form-control" id="rating" name="rating" required>
+						<option value="" disabled selected>Select a rating</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</op ltion>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Search" class="btn btn-primary">
+				</div>
+				<div class="form-group mt-4">
+					<label for="results" style="color: #134B70; font-size: 1.2em;"><strong>Results</strong></label>
+					<div id="results" class="p-4 bg-white border rounded shadow-sm" style="font-family: 'Work Sans', sans-serif; color: #001F3F; font-weight: normal; border: 2px solid #134B70;">
+						<p class="text-center" style="color: #134B70; font-weight: normal;">Your search results will appear here.</p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<footer class="site-footer">
+		<div class="container">
+		  <div class="row">
+			<div class="col-lg-4">
+			  <div class="widget">
+				<h3 class="mb-4">About</h3>
+				<p style="text-align: justify;">Website ini hadir untuk membantu Anda menemukan destinasi wisata terbaik di Pulau Jawa. Jelajahi keindahan alam, budaya, dan hiburan dalam satu platform.</p>
+			  </div> <!-- /.widget -->
+			  <div class="widget">
+				<h3>Social Media</h3>
+				<ul class="list-unstyled social">
+				  <li><a href="#"><span class="icon-instagram"></span></a></li>
+				  <li><a href="#"><span class="icon-twitter"></span></a></li>
+				  <li><a href="#"><span class="icon-facebook"></span></a></li>
+				  <li><a href="#"><span class="icon-linkedin"></span></a></li>
+				  <li><a href="#"><span class="icon-pinterest"></span></a></li>
+				  <li><a href="#"><span class="icon-dribbble"></span></a></li>
+				</ul>
+			  </div> <!-- /.widget -->
+			</div> <!-- /.col-lg-4 -->
+			<div class="col-lg-4 ps-lg-5">
+			  <div class="widget">
+				<h3 class="mb-4">Company</h3>
+				<ul class="list-unstyled float-start links">
+				  <li><a href="#">About us</a></li>
+				  <li><a href="#">Services</a></li>
+				  <li><a href="#">Vision</a></li>
+				  <li><a href="#">Mission</a></li>
+				  <li><a href="#">Terms</a></li>
+				  <li><a href="#">Privacy</a></li>
+				</ul>
+				<ul class="list-unstyled float-start links">
+				  <li><a href="#">Partners</a></li>
+				  <li><a href="#">Business</a></li>
+				  <li><a href="#">Careers</a></li>
+				  <li><a href="#">Blog</a></li>
+				  <li><a href="#">FAQ</a></li>
+				  <li><a href="#">Creative</a></li>
+				</ul>
+			  </div> <!-- /.widget -->
+			</div> <!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+			  <div class="widget">
+				<h3 class="mb-4">Blog</h3>
+				<div class="post-entry-footer">
+				  <ul>
+					<li>
+					  <a href="">
+						<img src="{{ url_for('static', filename='images/footer1.jpeg') }}" alt="Image placeholder" class="me-4 rounded">
+						<div class="text">
+						  <h4>Tips Merencanakan Liburan di Pulau Jawa</h4>
+						  <div class="post-meta">
+							<span class="mr-2">15 Oktober 2024</span>
+						  </div>
+						</div>
+					  </a>
+					</li>
+					<li>
+					  <a href="">
+						<img src="{{ url_for('static', filename='images/footer2.jpeg') }}" alt="Image placeholder" class="me-4 rounded">
+						<div class="text">
+						  <h4>5 Destinasi Wisata Pulau Jawa yang Wajib Dikunjungi Tahun Ini</h4>
+						  <div class="post-meta">
+							<span class="mr-2">20 November 2024</span>
+						  </div>
+						</div>
+					  </a>
+					</li>
+					<li>
+					  <a href="">
+						<img src="{{ url_for('static', filename='images/footer3.jpeg') }}" alt="Image placeholder" class="me-4 rounded">
+						<div class="text">
+						  <h4>Wisata Ramah Anak di Pulau Jawa</h4>
+						  <div class="post-meta">
+							<span class="mr-2">2 September 2024</span>
+						  </div>
+						</div>
+					  </a>
+					</li>
+				  </ul>
+				</div>
+	
+	
+			  </div> <!-- /.widget -->
+			</div> <!-- /.col-lg-4 -->
+		  </div> <!-- /.row -->
+	
+		  <div class="row mt-5">
+			<div class="col-12 text-center">
+			  <!-- 
+				  **==========
+				  NOTE: 
+				  Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+				  **==========
+				-->
+	
+				<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed by <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
+				</p>
+			  </div>
+			</div>
+		  </div> <!-- /.container -->
+		</footer> <!-- /.site-footer -->
+	
+		<!-- Preloader -->
+		<div id="overlayer"></div>
+		<div class="loader">
+		  <div class="spinner-border text-primary" role="status">
+			<span class="visually-hidden">Loading...</span>
+		  </div>
+		</div>
+	
+	
+		<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/tiny-slider.js') }}"></script>
+	
+		<script src="{{ url_for('static', filename='js/flatpickr.min.js') }}"></script>
+	
+	
+		<script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/glightbox.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/counter.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+	
+		<script>
+			document.getElementById('trip-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				const formData = new FormData(event.target);
+		
+				fetch('/trip', {
+					method: 'POST',
+					body: formData,
+				})
+				.then(response => response.json())
+				.then(data => {
+					const resultsDiv = document.getElementById('results');
+					if (data.error) {
+						resultsDiv.innerHTML = `<p class="text-danger">${data.error}</p>`;
+					} else if (data.length > 0) {
+						resultsDiv.innerHTML = data.map(place => `<p>${place}</p>`).join('');
+					} else {
+						resultsDiv.innerHTML = '<p>No recommendations found.</p>';
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					alert('An error occurred. Please try again.');
+				});
+			});
+		</script>		
+		
+	  </body>
+	  </html>

@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Untree.co">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap5" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tiny-slider.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/glightbox.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flatpickr.min.css') }}">
+
+
+    <title>PesonaJawa</title>
+</head>
+<body>
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="site-nav">
+        <div class="container">
+            <div class="menu-bg-wrap">
+                <div class="site-navigation">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-2">
+                            <a href="{{ url_for('home') }}" class="logo m-0 float-start">PesonaJawa<span class="text-primary">.</span></a>
+                        </div>
+                        <div class="col-8 text-center">
+                            <form action="#" class="search-form d-inline-block d-lg-none">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="bi-search"></span>
+                            </form>
+
+                            <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
+                                <li><a href="{{ url_for('home') }}">Home</a></li>
+                                <li class="has-children active">
+                                  <a href="#">Category</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ url_for('budaya') }}">Budaya</a></li>
+                                        <li><a href="{{ url_for('tamanhiburan') }}">Taman Hiburan</a></li>
+                                        <li><a href="{{ url_for('pusper') }}">Pusat Perbelanjaan</a></li>
+                                        <li><a href="{{ url_for('cagaralam') }}">Cagar Alam</a></li>
+                                        <li class="active"><a href="{{ url_for('bahari') }}">Bahari</a></li>
+                                        <li><a href="{{ url_for('ibadah') }}">Tempat Ibadah</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ url_for('trip') }}">Trip</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-2 text-end">
+                            <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+                                <span></span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  
+    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{ url_for('static', filename='images/baharibg.jpeg') }}'); background-size: cover; background-position: center; height: 400px;">
+    <div class="container">
+      <div class="row same-height justify-content-center">
+        <div class="col-md-6">
+          <div class="post-entry text-center">
+            <h1 class="mb-4">WISATA BAHARI</h1>
+            <div class="post-meta align-items-center text-center">
+              <span class="d-inline-block mt-1">"Menyelami Wisata Bahari Pulau Jawa"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="col-md-12 col-lg-8 main-content mx-auto">
+        <div class="post-content-body" style="text-align: justify;">
+          <p>Wisata Bahari di Jawa menawarkan berbagai pengalaman liburan yang menyenangkan, mulai dari pantai yang indah, kegiatan air, hingga keunikan ekosistem laut. Pulau Jawa, meskipun lebih dikenal dengan kota-kotanya yang ramai, juga memiliki sejumlah destinasi wisata bahari yang tak kalah menarik.</p>
+          <p>Nikmati pesona wisata bahari yang memukau dengan keindahan pantai, laut biru, dan pesona bawah air yang menakjubkan. Pulau Jawa menyuguhkan beragam destinasi bahari yang sempurna untuk bersantai, berenang, hingga menyelam. Dari pasir putih yang lembut hingga ombak yang menggoda untuk berselancar, setiap pantai menawarkan pengalaman unik dan tak terlupakan. Ayo, rasakan ketenangan alam dan petualangan seru di destinasi wisata bahari pilihan Anda!</p>
+        </div>
+        <section class="section">
+          <div class="container">
+      
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <h2 class="posts-entry-title">Destinasi</h2>
+              </div>
+              <div class="col-sm-6 text-sm-end"><a href="{{ url_for('bahari') }}" class="read-more">View All</a></div>
+            </div>
+      
+            <div class="row">
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/ria.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+      
+                    <h2><a href="{{ url_for('bahari') }}">Pantai Ria Kenjeran</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Surabaya</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp15.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">4.2</a></span>
+                    </div>
+      
+                    <p>salah satu destinasi populer bagi warga Surabaya dan sekitarnya untuk berlibur, menikmati suasana pantai, serta menikmati pemandangan laut yang menenangkan.</p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/tidung.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+      
+                    <h2><a href="{{ url_for('bahari') }}">Pulau Tidung</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Jakarta</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp150.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">4.5</a></span>
+
+                    </div>
+      
+                    <p>Pulau ini terkenal dengan keindahan alam bawah laut, pasir putih, dan suasana yang tenang, menjadikannya destinasi wisata yang populer untuk liburan.</p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/pari.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+                    <h2><a href="{{ url_for('bahari') }}">Pulau Pari</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Jakarta</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp150.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">4.0</a></span>
+                    </div>
+      
+                    <p>Pulau ini terkenal dengan keindahan pantainya yang masih alami, pasir putihnya yang halus, dan air laut yang jernih.</p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/parangtritis.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+      
+                    <h2><a href="{{ url_for('bahari') }}">Pantai Parangtritis</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Yogyakarta</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp10.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">4.5</a></span>
+                    </div>
+      
+                    <p>Pantai ini terkenal dengan pemandangan yang dramatis, pasir hitam vulkanik, serta angin yang kencang. Selain keindahan alamnya.</p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/sepanjang.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+      
+                    <h2><a href="{{ url_for('bahari') }}">Pantai Sepanjang</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Yogyakarta</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp10.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">4.4</a></span>
+                    </div>
+      
+                    <p> Pantai ini terkenal dengan keindahan alamnya, dengan pasir putih yang bersih, air laut yang jernih, dan pemandangan alam yang masih sangat alami. </p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/siung.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+      
+                    <h2><a href="{{ url_for('bahari') }}">Pantai Siung</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Yogyakarta</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp10.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">4.6</a></span>
+                    </div>
+      
+                    <p>Pantai ini dikelilingi oleh tebing-tebing karst yang menjulang tinggi, memberikan pemandangan yang sangat dramatis, serta suasana yang tenang dan asri.</p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+      
+      
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/baruna.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+      
+                    <h2><a href="{{ url_for('bahari') }}">Pantai Baruna</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Semarang</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp3.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">4.0</a></span>
+                    </div>
+      
+                    <p>Pantai ini masih relatif sepi dan jarang dikunjungi oleh wisatawan, menjadikannya pilihan tepat bagi mereka yang mencari ketenangan dan keindahan alam yang lebih alami.</p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/cipta.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+                    
+      
+                    <h2><a href="{{ url_for('bahari') }}">Pantai Cipta</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Kota Yogyakarta</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp5.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">4.0</a></span>
+                    </div>
+      
+                    <p>Pantai memiliki pesona alam yang menawan, dengan pasir putih, air laut yang jernih, serta pemandangan sekitar yang hijau dan asri.</p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-4">
+                <div class="post-entry-alt">
+                  <a href="{{ url_for('bahari') }}" class="img-link"><img src="{{ url_for('static', filename='images/maron.jpg') }}" alt="Image" class="img-fluid"></a>
+                  <div class="excerpt">
+                    
+                    
+      
+                    <h2><a href="{{ url_for('bahari') }}">Pantai Maron</a></h2>
+                    <div class="post-meta align-items-center text-left clearfix">
+                      <span class="d-inline-block mt-1">Lokasi : <a href="#">Semarang</a></span>
+                      <span class="d-inline-block mt-1">Harga : <a href="#">Rp5.000</a></span>
+                      <span class="d-inline-block mt-1">Rating : <a href="#">3.4</a></span>
+                    </div>
+      
+                    <p>Pantai ini cukup populer sebagai destinasi wisata, terutama bagi mereka yang mencari suasana pantai yang tenang namun tetap mudah dijangkau dari kota.</p>
+                    <p><a href="#" class="read-more">Selengkapnya</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+
+        <div class="pt-5 comment-wrap">
+          <h3 class="mb-5 heading">5 Comments</h3>
+          <ul class="comment-list">
+            <li class="comment">
+              <div class="vcard">
+                <img src="{{ url_for('static', filename='images/person_1.jpg') }}" alt="Image placeholder">
+              </div>
+              <div class="comment-body">
+                <h3>Januar Wijaya</h3>
+                <div class="meta">January 9, 2018 at 2:21pm</div>
+                <p>MayaAllah sangat indah pantai ria kenjeran</p>
+                <p><a href="#" class="reply rounded">Reply</a></p>
+              </div>
+            </li>
+
+            <li class="comment">
+              <div class="vcard">
+                <img src="{{ url_for('static', filename='images/person_2.jpg') }}" alt="Image placeholder">
+              </div>
+              <div class="comment-body">
+                <h3>Selena Ror</h3>
+                <div class="meta">February 9, 2018 at 2:56pm</div>
+                <p>BAHARI SANGAT INDAH DI JAWA</p>
+                <p><a href="#" class="reply rounded">Reply</a></p>
+              </div>
+
+              <li class="comment">
+                <div class="vcard">
+                  <img src="{{ url_for('static', filename='images/person_2.jpg') }}" alt="Image placeholder">
+                </div>
+                <div class="comment-body">
+                  <h3>Krisnaes</h3>
+                  <div class="meta">May 10, 2022 at 2:21pm</div>
+                  <p>Jawa is Wonderfull</p>
+                  <p><a href="#" class="reply rounded">Reply</a></p>
+                </div>
+
+                <li class="comment">
+                  <div class="vcard">
+                    <img src="{{ url_for('static', filename='images/person_2.jpg') }}" alt="Image placeholder">
+                  </div>
+                  <div class="comment-body">
+                    <h3>Kurniasari</h3>
+                    <div class="meta">March 9, 2023 at 2:21pm</div>
+                    <p>JOS PANTAI YOGJAKARTA😍😍😍</p>
+                    <p><a href="#" class="reply rounded">Reply</a></p>
+                  </div>
+
+                  <li class="comment">
+                    <div class="vcard">
+                      <img src="{{ url_for('static', filename='images/person_2.jpg') }}" alt="Image placeholder">
+                    </div>
+                    <div class="comment-body">
+                      <h3>Lea Uti</h3>
+                      <div class="meta">August 9, 2018 at 2:21pm</div>
+                      <p>saya sangat suka pantai pantainya 👍👍👍👍</p>
+                      <p><a href="#" class="reply rounded">Reply</a></p>
+                    </div>
+
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <!-- END comment-list -->
+
+          <div class="comment-form-wrap pt-5">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="widget">
+          <h3 class="mb-4">About</h3>
+          <p style="text-align: justify;">Website ini hadir untuk membantu Anda menemukan destinasi wisata terbaik di Pulau Jawa. Jelajahi keindahan alam, budaya, dan hiburan dalam satu platform.</p>
+        </div> <!-- /.widget -->
+        <div class="widget">
+          <h3>Social Media</h3>
+          <ul class="list-unstyled social">
+            <li><a href="#"><span class="icon-instagram"></span></a></li>
+            <li><a href="#"><span class="icon-twitter"></span></a></li>
+            <li><a href="#"><span class="icon-facebook"></span></a></li>
+            <li><a href="#"><span class="icon-linkedin"></span></a></li>
+            <li><a href="#"><span class="icon-pinterest"></span></a></li>
+            <li><a href="#"><span class="icon-dribbble"></span></a></li>
+          </ul>
+        </div> <!-- /.widget -->
+      </div> <!-- /.col-lg-4 -->
+      <div class="col-lg-4 ps-lg-5">
+        <div class="widget">
+          <h3 class="mb-4">Company</h3>
+          <ul class="list-unstyled float-start links">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Vision</a></li>
+            <li><a href="#">Mission</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+          <ul class="list-unstyled float-start links">
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Creative</a></li>
+          </ul>
+        </div> <!-- /.widget -->
+      </div> <!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <div class="widget">
+          <h3 class="mb-4">Blog</h3>
+          <div class="post-entry-footer">
+            <ul>
+              <li>
+                <a href="">
+                  <img src="{{ url_for('static', filename='images/footer1.jpeg') }}" alt="Image placeholder" class="me-4 rounded">
+                  <div class="text">
+                    <h4>Tips Merencanakan Liburan di Pulau Jawa</h4>
+                    <div class="post-meta">
+                      <span class="mr-2">15 Oktober 2024</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="{{ url_for('static', filename='images/footer2.jpeg') }}" alt="Image placeholder" class="me-4 rounded">
+                  <div class="text">
+                    <h4>5 Destinasi Wisata Pulau Jawa yang Wajib Dikunjungi Tahun Ini</h4>
+                    <div class="post-meta">
+                      <span class="mr-2">20 November 2024</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="{{ url_for('static', filename='images/footer3.jpeg') }}" alt="Image placeholder" class="me-4 rounded">
+                  <div class="text">
+                    <h4>Wisata Ramah Anak di Pulau Jawa</h4>
+                    <div class="post-meta">
+                      <span class="mr-2">2 September 2024</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+
+        </div> <!-- /.widget -->
+      </div> <!-- /.col-lg-4 -->
+    </div> <!-- /.row -->
+
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <!-- 
+            **==========
+            NOTE: 
+            Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+            **==========
+          -->
+
+          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed by <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
+          </p>
+        </div>
+      </div>
+    </div> <!-- /.container -->
+  </footer> <!-- /.site-footer -->
+
+  <!-- Preloader -->
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tiny-slider.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='js/flatpickr.min.js') }}"></script>
+
+
+  <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+  
+</body>
+</html>
